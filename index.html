@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Tao Lu is a master's student at Huazhong University of Science and Technology. His research interests include anomaly detection, world models, decision optimization, and AI4Science."
+    />
+    <title>Tao Lu</title>
+    <link rel="preconnect" href="https://github.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead-inner">
+        <a class="site-title" href="#about">Tao Lu</a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#news">News</a>
+          <a href="#publications">Publications</a>
+          <a href="#patents">Patents</a>
+          <a href="#projects">Research Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <aside class="sidebar" aria-label="Author profile">
+        <div class="author-profile">
+          <img class="author-avatar" src="https://github.com/teinlu.png?size=420" alt="Tao Lu" />
+          <h1 class="author-name">Tao Lu</h1>
+          <p class="author-bio">Master's Student</p>
+          <p class="author-org">Huazhong University of Science and Technology</p>
+
+          <ul class="author-links">
+            <li>
+              <a href="mailto:lutao@hust.edu.cn" aria-label="Email Tao Lu">
+                <span class="icon">Email</span>
+                <span>lutao@hust.edu.cn</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:3091256063@qq.com" aria-label="Alternative email">
+                <span class="icon">Email</span>
+                <span>3091256063@qq.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/teinlu" target="_blank" rel="noreferrer">
+                <span class="icon">Code</span>
+                <span>GitHub</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <article class="content">
+        <section class="section" id="about" aria-labelledby="about-title">
+          <h2 id="about-title">About Me</h2>
+          <p>
+            I am a master's student at <strong>Huazhong University of Science and Technology (HUST)</strong>.
+            My research interests span <strong>anomaly detection</strong> (general, 2D/3D, and multimodal),
+            <strong>world models</strong>, <strong>decision optimization</strong>, and
+            <strong>AI4Science</strong> (with a focus on power device applications).
+          </p>
+          <p>
+            During my undergraduate studies at <strong>China University of Geosciences (Wuhan)</strong>, I worked
+            on space habitat construction path planning and teleoperation robot systems. My current work at HUST
+            focuses on building robust, generalizable anomaly detectors and exploring how world models can
+            enhance decision-making in scientific and industrial applications.
+          </p>
+          <p>
+            I enjoy implementing research ideas with clean, reproducible code and digging into the
+            geometry behind point clouds and multimodal data.
+            Feel free to reach out at
+            <a href="mailto:lutao@hust.edu.cn">lutao@hust.edu.cn</a>.
+          </p>
+        </section>
+
+        <section class="section" id="news" aria-labelledby="news-title">
+          <h2 id="news-title">Recent News</h2>
+          <ul class="news-list">
+            <li>
+              <span class="news-date">2026/06</span>
+              <span>
+                Homepage updated — research interests expanded; two manuscripts under review added
+                (GLARE &amp; SurfConv).
+              </span>
+            </li>
+            <li>
+              <span class="news-date">2026</span>
+              <span>
+                One SCI journal paper (co-first author) and one IEEE conference paper (first author)
+                accepted.
+              </span>
+            </li>
+            <li>
+              <span class="news-date">2025</span>
+              <span>
+                Started M.S. at Huazhong University of Science and Technology.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="publications" aria-labelledby="publications-title">
+          <h2 id="publications-title">Selected Publications</h2>
+          <p class="section-note">(*: Equal Contribution, ✉: Corresponding Author)</p>
+
+          <!-- [1] GLARE - Under Review -->
+          <div class="pub-entry">
+            <div class="pub-entry-header">
+              <span class="pub-title">
+                GLARE: Geometry-based Local Anomaly Recognition and Encoding for Few-Shot 3D
+                Industrial Anomaly Detection
+              </span>
+              <a
+                href="#"
+                class="pub-paper-link"
+                title="Paper link coming soon"
+                style="color:#888; margin-left:8px; font-size:0.85em;"
+              >[Paper]</a>
+            </div>
+            <div class="pub-meta"><strong>Tao Lu</strong>, et al.</div>
+            <div class="pub-venue">
+              <span class="venue-badge">Under Review</span>
+              Manuscript, 2026
+            </div>
+            <p class="pub-abstract">
+              GLARE detects 3D industrial defects using <strong>only point cloud geometry</strong> —
+              no RGB, no large pretrained encoders. A compact 12-dimensional geometric descriptor
+              (7 shape-ratio + 5 local height statistics) built from 7,000+ ablation configurations
+              feeds a normal-feature memory bank; anomalies are localized by maximum feature
+              deviation. A single neighborhood scale (<em>k</em> = 16) matches five-scale ensembles
+              at 4× lower latency. Density-Aware Memory Scoring (DAMS), a parameter-free
+              percentile-weighted pooling operator, corrects for variable point density and yields a
+              consistent +2.2 pp gain over standard max-pooling. Evaluated under an 8-shot
+              depth-only protocol, GLARE reaches <strong>66.1% AUROC on Real3D-AD</strong> and
+              <strong>75.1% on MVTec3D-AD</strong>, narrowing the geometry-to-RGB-D accuracy gap to
+              4.3 pp on Real3D-AD. Each sample processes in 31 ms (26× faster than FPFH).
+            </p>
+          </div>
+
+          <!-- [2] SurfConv - Under Review -->
+          <div class="pub-entry">
+            <div class="pub-entry-header">
+              <span class="pub-title">
+                SurfConv: Treating Organized Point Clouds as Geometry Images for Industrial
+                Anomaly Detection
+              </span>
+              <a
+                href="#"
+                class="pub-paper-link"
+                title="Paper link coming soon"
+                style="color:#888; margin-left:8px; font-size:0.85em;"
+              >[Paper]</a>
+            </div>
+            <div class="pub-meta"><strong>Tao Lu</strong>, et al.</div>
+            <div class="pub-venue">
+              <span class="venue-badge">Under Review</span>
+              Manuscript, 2026
+            </div>
+            <p class="pub-abstract">
+              Structured-light depth scanners produce <em>organized</em> point clouds (H × W grids
+              where grid adjacency directly encodes surface adjacency), yet leading 3D anomaly
+              detection methods discard this structure by converting scans to unordered sets that
+              require Open3D, MinkowskiEngine, or PointTransformer. SurfConv shows this is
+              avoidable for industrial structured-light data: organized point clouds are treated as
+              <strong>geometry images</strong> — standard 2D tensors processable by frozen ImageNet
+              backbones. The key component is <strong>FDGE (Finite-Difference Geometry Encoding)</strong>:
+              a pure-PyTorch geometry parameterization that computes 5-channel surface descriptors
+              (normals <strong>n</strong>, curvature proxies <em>H</em>, <span style="font-family:serif;">˜</span><em>K</em>)
+              at &lt;10 ms per image with <strong>zero external 3D library dependencies</strong>.
+              These geometry features are fused with RGB via a dual-stream PatchCore memory bank.
+              On MVTec3D-AD (10 categories), SurfConv achieves
+              <strong>98.3% Pixel-AUROC</strong> (3-seed mean) — competitive with or above
+              3D-library-dependent methods (PO3AD: 97.5%, Shape-Guided: 97.4%, BTF: 96.1%)
+              — with zero external 3D library dependencies. FDGE geometry encoding improves
+              I-AUROC by +8.4 pp over RGB-only (3-seed per-category mean; <em>p</em> = 0.009**,
+              exploratory). On Real3D-AD (12 categories, 4–9 training samples), SurfConv achieves
+              <strong>90.5% P-AUROC</strong> (3-seed mean), competitive with the strongest prior 3D
+              baseline (R3D-AD: 90.3%) while requiring no 3D libraries.
+            </p>
+          </div>
+
+          <!-- [3] IEEE conference (accepted) - WITH PAPER LINK -->
+          <div class="pub-entry">
+            <div class="pub-entry-header">
+              <span class="pub-title">
+                A Construction Method of Remote Operating System for Position and Pose Mapping of
+                Master-Slave Heterogeneous Robots
+              </span>
+              <a
+                href="https://doi.org/10.1109/MCTE62870.2024.11117879"
+                class="pub-paper-link"
+                target="_blank"
+                rel="noreferrer"
+                style="margin-left:8px; font-size:0.85em;"
+              >[Paper]</a>
+            </div>
+            <div class="pub-meta"><strong>Tao Lu</strong>, et al.</div>
+            <div class="pub-venue">
+              <span class="venue-badge">IEEE Conference</span>
+              Accepted, 2026 &middot;
+              <a
+                href="https://doi.org/10.1109/MCTE62870.2024.11117879"
+                target="_blank"
+                rel="noreferrer"
+                style="font-size:0.85em; color:#666;"
+              >doi:10.1109/MCTE62870.2024.11117879</a>
+            </div>
+            <p class="pub-abstract">
+              Proposes a complete remote operating system construction method for position and pose
+              mapping of master-slave heterogeneous robots, enabling effective human-robot
+              collaboration across spatial and physical boundaries.
+            </p>
+          </div>
+
+          <!-- [4] SCI journal (co-first author, accepted) - WITH PAPER LINK -->
+          <div class="pub-entry">
+            <div class="pub-entry-header">
+              <span class="pub-title">
+                Inertial Motion Capture-Driven Digital Human for Ergonomic Validation: A Case
+                Study of Core Drilling
+              </span>
+              <a
+                href="https://doi.org/10.3390/s24185962"
+                class="pub-paper-link"
+                target="_blank"
+                rel="noreferrer"
+                style="margin-left:8px; font-size:0.85em;"
+              >[Paper]</a>
+            </div>
+            <div class="pub-meta">Tao Lu*, et al. <span class="equal-contrib">*</span></div>
+            <div class="pub-venue">
+              <span class="venue-badge journal">SCI Q2 &middot; JCR Q2 &middot; IF = 3.7</span>
+              Accepted, 2026 &middot;
+              <a
+                href="https://doi.org/10.3390/s24185962"
+                target="_blank"
+                rel="noreferrer"
+                style="font-size:0.85em; color:#666;"
+              >doi:10.3390/s24185962</a>
+            </div>
+            <p class="pub-abstract">
+              Proposes a digital human driven by inertial motion capture for ergonomic
+              validation, demonstrated through a case study of core drilling operations, bridging
+              the gap between motion capture data and human-centered ergonomic assessment.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="patents" aria-labelledby="patents-title">
+          <h2 id="patents-title">Patents</h2>
+
+          <div class="patent-entry">
+            <div class="patent-title">
+              A Virtual Human Modeling and Force Comfort Analysis Method, Equipment and Medium
+            </div>
+            <div class="patent-meta">
+              <div class="patent-info-row">
+                <span class="patent-label">Inventors:</span>
+                <span>Lu Tao, Zhao Quan, Wen Guojun, He Xin, Cheng Siyi, Mei Shuang, Tao Menglun, Dong Hongbo</span>
+              </div>
+              <div class="patent-info-row">
+                <span class="patent-label">Application No.:</span>
+                <span>2024105660618</span>
+              </div>
+              <div class="patent-info-row">
+                <span class="patent-label">Status:</span>
+                <span class="patent-status-active">Substantive Examination</span>
+              </div>
+            </div>
+            <p class="patent-abstract">
+              Discloses a digital human modeling method and force comfort analysis system, enabling
+              ergonomic evaluation through real-time biomechanical analysis for human-in-the-loop
+              robotic and simulation scenarios.
+            </p>
+          </div>
+        </section>
+
+        <section class="section" id="projects" aria-labelledby="projects-title">
+          <h2 id="projects-title">Research Projects</h2>
+
+          <div class="project-entry">
+            <div class="project-header">
+              <div class="project-title-row">
+                <span class="project-title">Exploration and Conjecture Plan</span>
+                <span class="project-badge leader">Project Lead</span>
+              </div>
+              <div class="project-org">
+                China University of Geosciences (Wuhan) &nbsp;|&nbsp; No.:
+                <strong>EGP-202215</strong>
+              </div>
+            </div>
+            <div class="project-desc">
+              Directed a research initiative exploring AI and advanced technologies for
+              Mars surface habitat construction — investigating autonomous building systems, in-situ
+              resource utilization, and proposing a complete construction pathway for future human
+              settlement on Mars.
+            </div>
+          </div>
+
+          <div class="project-entry">
+            <div class="project-header">
+              <div class="project-title-row">
+                <span class="project-title">Innovation &amp; Entrepreneurship Training Program</span>
+                <span class="project-badge leader">Project Lead</span>
+              </div>
+              <div class="project-org">
+                Key Support Field Project &nbsp;|&nbsp; No.:
+                <strong>G202450491059</strong>
+              </div>
+            </div>
+            <div class="project-desc">
+              Led the design of a master-slave teleoperation robotic system for teleoperated
+              medical manipulators — combining human intelligence with robotic precision and
+              adaptability to enable intuitive, high-fidelity remote surgical and assistance tasks.
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="education" aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
+          <div class="education-item">
+            <div>
+              <strong>Huazhong University of Science and Technology (HUST)</strong>
+            </div>
+            <span>2025 &ndash; Present</span>
+          </div>
+          <div class="education-item" style="margin-top: 12px">
+            <div>
+              <strong>China University of Geosciences (Wuhan) (CUG)</strong>
+              <p>B.S. in Computer Science and Technology</p>
+            </div>
+            <span>2021 &ndash; 2025</span>
+          </div>
+        </section>
+
+        <section class="section" id="contact" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact</h2>
+          <p>
+            I welcome collaboration opportunities related to anomaly detection, world models,
+            point cloud geometry, AI4Science, and industrial computer vision.
+          </p>
+          <p>
+            Email:
+            <a href="mailto:lutao@hust.edu.cn">lutao@hust.edu.cn</a><br />
+            Alternative email:
+            <a href="mailto:3091256063@qq.com">3091256063@qq.com</a>
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="page-footer">
+      <span>Copyright <span id="year">2026</span> Tao Lu</span>
+      <a href="#about">Back to top</a>
+    </footer>
+
+    <!-- Visitor Counter: FlagCounter -->
+    <div style="text-align:center; margin:18px 0 8px 0;">
+      <a href="https://info.flagcounter.com/IPt3">
+        <img
+          src="https://s05.flagcounter.com/map/IPt3/size_m/txt_000000/border_CCCCCC/pageviews_1/viewers_0/flags_0/"
+          alt="Visitor Counter"
+          border="0"
+        />
+      </a>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
