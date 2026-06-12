@@ -3,6 +3,7 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+
 const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
