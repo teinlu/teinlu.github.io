@@ -19,5 +19,3 @@ Master's Student @ [Huazhong University of Science and Technology (HUST)](https:
 ## About
 
 I am a master's student at HUST. My work focuses on building robust, generalizable anomaly detectors and exploring how world models can enhance decision-making in scientific and industrial applications. I enjoy implementing research ideas with clean, reproducible code.
-
-During my undergraduate studies at China University of Geosciences (Wuhan), I worked on space habitat construction path planning and teleoperation robot systems.
