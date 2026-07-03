@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-05-19T01:30:00",
+  "full_comparison": {
+    "SingleScale_k8 (Ours)": 0.5765959043504625,
+    "HGAD_Full": 0.5393359982205871,
+    "PointNet_Pretrained": 0.5184907941595441,
+    "PointNet_Untrained": 0.5132860735201012,
+    "FPFH": 0.517312323803552,
+    "Eigenvalue_Only": 0.5138025094578241,
+    "Distance_Only": 0.5080294359413727,
+    "SHOT_Like": 0.4945339758153657,
+    "Random": 0.4581267133586578
+  },
+  "key_finding": {
+    "ours_auroc": 0.5765959043504625,
+    "pointnet_auroc": 0.5184907941595441,
+    "improvement": 0.05810511019091835,
+    "improvement_percent": 11.206584735049105
+  },
+  "category_level_tests": {
+    "n_categories": 12,
+    "test_type": "Wilcoxon signed-rank",
+    "note": "Category-level means used as independent observations"
+  },
+  "conclusion": "Simple local geometry (k=8) outperforms both PointNet features and FPFH"
+}

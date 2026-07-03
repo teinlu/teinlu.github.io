@@ -1,0 +1,33 @@
+# Datasets (download separately — see README)
+Real3D-mvtec/
+MVTec3d/
+data/raw/
+*.tiff
+*.tif
+*.pcd
+*.ply
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# Experiment artifacts
+wandb/
+*.log
+logs/
+checkpoints/
+*.pth
+*.ckpt
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Keep small JSON result summaries (results/*.json are tracked intentionally)

@@ -1,0 +1,9 @@
+{
+  "glare_feature_ms": 30.871057510375977,
+  "fpfh_feature_ms": 810.6735547383627,
+  "speedup_glare_vs_fpfh": 26.259986541306194,
+  "full_pipeline_s": 5.573028564453125,
+  "n_test_samples": 49,
+  "per_sample_ms": 113.73527682557398,
+  "auroc_diamond": 83.83333333333334
+}

@@ -1,0 +1,20 @@
+# GLARE: Geometry-based Local Anomaly Recognition and Encoding
+# Minimal dependencies (GLARE is a training-free, geometry-only method)
+
+# Core numerical / ML
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.2.0
+
+# GPU acceleration for neighborhood feature computation
+torch>=2.0.0
+
+# Depth-map / TIFF I/O (Real3D-AD, MVTec3D-AD depth maps)
+tifffile>=2023.3.0
+
+# Optional: FAISS for fast nearest-neighbor memory-bank scoring
+# (code falls back to sklearn KDTree if unavailable)
+# faiss-gpu>=1.7.0
+
+# Plotting (only needed to reproduce paper figures)
+matplotlib>=3.7.0

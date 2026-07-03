@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-05-19 17:14:04",
+  "method": "GLARE-Fast",
+  "device": "cuda",
+  "innovations": [
+    "MSGE (Multi-Scale Geometric Encoding)",
+    "DAMS (Density-Aware Memory Scoring)"
+  ],
+  "real3d": {},
+  "mvtec3d": {}
+}
