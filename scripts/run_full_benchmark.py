@@ -1,27 +1,3 @@
-#!/usr/bin/env python3
-"""
-Round 45: GPU-Optimized Comprehensive Experiments (RTX 5090 / 25GB)
-====================================================================
-Addresses all reviewer requests with maximum GPU throughput:
-
-1. Multi-seed statistical validation (10 seeds) — credibility
-2. DAMS uniform-weight ablation               — DAMS necessity proof
-3. Shot sensitivity (1/2/4/8/16-shot)         — experimental scope
-4. Pose robustness (±5°, ±15° rotation)       — gravity assumption test
-5. GLARE-v2 improved algorithm (15D features) — algorithm improvement
-
-GPU Optimizations (vs Round 44):
-  - Batch processing: all categories in parallel using ThreadPoolExecutor
-  - Pre-caching: load + featurize ALL point clouds once, reuse across seeds
-  - Mixed-precision (torch.amp.autocast) for eigendecomp
-  - Chunked cdist to avoid OOM on 25GB VRAM
-  - FPS (Farthest Point Sampling) on GPU via batched distance sampling
-  - Category-level GPU tensor reuse (no repeated data-loading)
-
-Author: ARIS Research Pipeline
-Date: 2026-05-21
-"""
-
 import os
 import sys
 import json
@@ -62,14 +38,11 @@ else:
 # ─────────────────────────────────────────────────────
 # Paths
 # ─────────────────────────────────────────────────────
-REAL3D_ROOT  = Path('/home/cxs/桌面/aris2/Real3D-mvtec')
-MVTEC3D_ROOT = Path('/home/cxs/桌面/aris2/MVTec3d')
-RESULTS_DIR  = Path('/home/cxs/桌面/aris2/results')
+REAL3D_ROOT  = Path('/Real3D')
+MVTEC3D_ROOT = Path('/MVTec3d')
+RESULTS_DIR  = Path('/results')
 RESULTS_DIR.mkdir(exist_ok=True)
 
-# ─────────────────────────────────────────────────────
-# Data Loading (CPU, multi-threaded)
-# ─────────────────────────────────────────────────────
 
 def load_tiff_points(file_path: str, n_points: int = 2048,
                      seed: int = 42) -> Optional[np.ndarray]:
@@ -602,7 +575,7 @@ def exp1_multiseed():
     }
     out = RESULTS_DIR / 'round45_multiseed.json'
     out.write_text(json.dumps(result, indent=2))
-    print(f"  ✅ Saved → {out}  ({elapsed/60:.1f} min)")
+    print(f" Saved → {out}  ({elapsed/60:.1f} min)")
     return result
 
 
@@ -646,7 +619,7 @@ def exp2_dams_ablation():
     }
     out = RESULTS_DIR / 'round45_dams_ablation.json'
     out.write_text(json.dumps(result, indent=2))
-    print(f"  ✅ Saved → {out}  ({elapsed/60:.1f} min)")
+    print(f"  Saved → {out}  ({elapsed/60:.1f} min)")
     return result
 
 
@@ -678,7 +651,7 @@ def exp3_shot_sensitivity():
     }
     out = RESULTS_DIR / 'round45_shot_sensitivity.json'
     out.write_text(json.dumps(result, indent=2))
-    print(f"  ✅ Saved → {out}  ({elapsed/60:.1f} min)")
+    print(f"  Saved → {out}  ({elapsed/60:.1f} min)")
     return result
 
 
@@ -713,7 +686,7 @@ def exp4_pose_robustness():
     }
     out = RESULTS_DIR / 'round45_pose_robustness.json'
     out.write_text(json.dumps(result, indent=2))
-    print(f"  ✅ Saved → {out}  ({elapsed/60:.1f} min)")
+    print(f" Saved → {out}  ({elapsed/60:.1f} min)")
     return result
 
 
@@ -760,7 +733,7 @@ def exp5_scale_ablation():
     }
     out = RESULTS_DIR / 'round45_scale_ablation.json'
     out.write_text(json.dumps(result, indent=2))
-    print(f"  ✅ Saved → {out}  ({elapsed/60:.1f} min)")
+    print(f"  Saved → {out}  ({elapsed/60:.1f} min)")
     return result
 
 
@@ -833,7 +806,7 @@ def main():
     print(f"\n  Total time: {total_elapsed/60:.1f} min")
 
     # Save combined summary
-    summary_path = RESULTS_DIR / 'round45_summary.json'
+    summary_path = RESULTS_DIR / 'summary.json'
     with open(summary_path, 'w') as f:
         json.dump({
             'round': 45,
@@ -843,7 +816,7 @@ def main():
             'experiments': list(all_results.keys()),
             'summaries': {k: v.get('summary', {}) for k, v in all_results.items()}
         }, f, indent=2)
-    print(f"  ✅ Combined summary → {summary_path}")
+    print(f" Combined summary → {summary_path}")
 
 
 if __name__ == '__main__':
