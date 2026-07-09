@@ -1,18 +1,3 @@
-#!/usr/bin/env python3
-"""
-Round 46: GLARE+ — Category-Adaptive Feature Selection
-=======================================================
-Key innovations:
-1. Automatic detection of geometry-texture failure cases
-2. Surface roughness / normal variation as supplementary features for organic shapes
-3. Dual-mode operation: geometry-heavy for structured objects, roughness-heavy for organic
-4. Confidence intervals via bootstrap + 10-seed reproducibility
-5. BTF-FPFH re-implementation for fair 8-shot comparison
-
-Goal: Push gemstone/shell/chicken/duck from ~35-50% → 55%+
-      Lift overall Real3D-AD from 65.0% → 67-68%
-"""
-
 import numpy as np
 import torch
 import json
@@ -53,13 +38,10 @@ else:
 
 print(f"[GPU-init] FAISS: {FAISS_AVAILABLE}, FAISS-GPU: {FAISS_GPU}", flush=True)
 
-# ═══════════════════════════════════════════════════════════
-# DATA LOADING
-# ═══════════════════════════════════════════════════════════
 
-REAL3D_ROOT = Path("/home/cxs/桌面/aris2/Real3D-mvtec")
-MVTEC3D_ROOT = Path("/home/cxs/桌面/aris2/MVTec3d")
-RESULTS_DIR = Path("/home/cxs/桌面/aris2/results")
+REAL3D_ROOT = Path("/Real3D")
+MVTEC3D_ROOT = Path("/MVTec3d")
+RESULTS_DIR = Path("/results")
 RESULTS_DIR.mkdir(exist_ok=True)
 
 def load_tiff_pointcloud(path, max_points=None):
@@ -261,9 +243,7 @@ def compute_features_plus(pts_np):
                                       use_roughness=True, use_curvature=True)
 
 
-# ═══════════════════════════════════════════════════════════
 # CORESET MEMORY BANK (DAMS-weighted)
-# ═══════════════════════════════════════════════════════════
 
 def greedy_coreset_gpu(features, m=8000, seed=0):
     """GPU-accelerated greedy farthest-point coreset."""
@@ -350,9 +330,6 @@ def knn_score_gpu(memory_bank, test_features, k=1):
     return np.concatenate(scores_list)
 
 
-# ═══════════════════════════════════════════════════════════
-# SINGLE CATEGORY EVALUATION
-# ═══════════════════════════════════════════════════════════
 
 def evaluate_category(train_files, test_normal, test_anomaly,
                        n_shots=8, seed=42, n_points=2048,
@@ -439,9 +416,7 @@ def evaluate_category(train_files, test_normal, test_anomaly,
     return roc_auc_score(all_labels, all_scores)
 
 
-# ═══════════════════════════════════════════════════════════
 # DATASET LOADERS
-# ═══════════════════════════════════════════════════════════
 
 def load_real3d_category(cat_dir):
     """Load Real3D-AD category files.
@@ -510,9 +485,6 @@ def load_mvtec3d_category(cat_dir):
     return train_files, test_normal, test_anomaly
 
 
-# ═══════════════════════════════════════════════════════════
-# EXPERIMENT 1: GLARE vs GLARE+ Comparison
-# ═══════════════════════════════════════════════════════════
 
 def exp1_glare_plus_comparison():
     """
@@ -593,9 +565,6 @@ def exp1_glare_plus_comparison():
     return results
 
 
-# ═══════════════════════════════════════════════════════════
-# EXPERIMENT 2: BTF-FPFH Re-implementation (8-shot fair comparison)
-# ═══════════════════════════════════════════════════════════
 
 def compute_fpfh_features(pts_np, k=30):
     """
@@ -809,10 +778,6 @@ def exp2_btf_fpfh_8shot():
     }
 
 
-# ═══════════════════════════════════════════════════════════
-# EXPERIMENT 3: Bootstrap Confidence Intervals
-# ═══════════════════════════════════════════════════════════
-
 def exp3_confidence_intervals():
     """
     Bootstrap confidence intervals for main results.
@@ -890,9 +855,6 @@ def exp3_confidence_intervals():
     }
 
 
-# ═══════════════════════════════════════════════════════════
-# EXPERIMENT 4: MVTec3D GLARE+ Evaluation
-# ═══════════════════════════════════════════════════════════
 
 def exp4_mvtec3d_glarep():
     """GLARE+ on MVTec3D-AD with 5 seeds."""
@@ -950,9 +912,6 @@ def exp4_mvtec3d_glarep():
     return results
 
 
-# ═══════════════════════════════════════════════════════════
-# MAIN
-# ═══════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
     t_start = time.time()
@@ -1020,7 +979,7 @@ if __name__ == "__main__":
     
     print(f"\n  Total time: {total_time:.1f}s", flush=True)
     
-    with open(RESULTS_DIR / 'round46_summary.json', 'w') as f:
+    with open(RESULTS_DIR / 'your path', 'w') as f:
         json.dump({
             'glare_plus_real3d': s1,
             'btf_fpfh_comparison': r2,
@@ -1029,4 +988,4 @@ if __name__ == "__main__":
             'total_time_s': total_time
         }, f, indent=2, default=float)
     
-    print(f"\nAll results saved to {RESULTS_DIR}/round46_*.json", flush=True)
+    print(f"\nAll results saved to {RESULTS_DIR}/your path", flush=True)
