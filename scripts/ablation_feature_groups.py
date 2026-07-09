@@ -1,9 +1,4 @@
-#!/usr/bin/env python3
 """
-Round 41: Feature Group Ablation Study
-
-Addresses Reviewer Weakness 1: "Why these 17 features?"
-
 Feature Groups:
 1. Eigenvalue-based shape (7): linearity, planarity, sphericity, anisotropy, omnivariance, eigen-entropy, curvature
 2. Distance statistics (5): mean, std, max, min, median of neighbor distances
@@ -416,7 +411,7 @@ def main():
         }
     }
     
-    output_path = Path("/home/cxs/桌面/aris2/results/round41_feature_group_ablation.json")
+    output_path = Path("/your local path")
     with open(output_path, 'w') as f:
         json.dump(output, f, indent=2)
     
