@@ -1,20 +1,3 @@
-#!/usr/bin/env python3
-"""
-Round 36: GLARE Pro - Maximum Performance GPU Benchmark
-========================================================
-Target: Beat SOTA (Real3D-AD > 70.4%, MVTec3D-AD > 85.6%)
-
-Key Changes from Round 35:
-1. Increased n_points to 4096 for better coverage
-2. Added k=64 scale for larger context
-3. Enhanced feature set with gradient features
-4. Improved DAMS with adaptive percentiles
-5. Better memory bank with greedy coreset
-
-Author: ARIS Research Pipeline
-Date: 2026-05-19
-"""
-
 import os
 import sys
 import json
