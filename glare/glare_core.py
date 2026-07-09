@@ -1,12 +1,3 @@
-#!/usr/bin/env python3
-"""
-Round 33: GLARE GPU-Accelerated Benchmark
-Uses PyTorch CUDA for fast point cloud processing.
-
-Author: ARIS Research Pipeline
-Date: 2026-05-19
-"""
-
 import os
 import sys
 import json
