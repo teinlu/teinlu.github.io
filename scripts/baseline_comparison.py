@@ -1,19 +1,3 @@
-#!/usr/bin/env python3
-"""
-Round 40: Baseline Comparison Study
-====================================
-Compare GLARE against proper baselines to establish true contribution.
-
-Baselines:
-1. Random baseline
-2. PCA-based features
-3. Local curvature only
-4. GLARE (our method)
-
-Author: ARIS Research Pipeline
-Date: 2026-05-19
-"""
-
 import os
 import sys
 import json
@@ -356,8 +340,8 @@ def main():
     print("Round 40: Baseline Comparison Study")
     print("="*70)
     
-    real3d_dir = Path('/home/cxs/桌面/aris2/Real3D-mvtec')
-    results_dir = Path('/home/cxs/桌面/aris2/results')
+    real3d_dir = Path('/Real3D')
+    results_dir = Path('/results')
     results_dir.mkdir(exist_ok=True)
     
     categories = ['candybar', 'car', 'chicken', 'diamond', 'duck',
@@ -387,15 +371,11 @@ def main():
     elapsed = time.time() - start_time
     results['elapsed_seconds'] = elapsed
     
-    # Summary
-    print("\n" + "="*70)
-    print("BASELINE COMPARISON SUMMARY")
-    print("="*70)
     
     for name, data in results['methods'].items():
         print(f"{name:35}: {data['mean_auroc']*100:.2f}%")
     
-    output_file = results_dir / 'round40_baseline_comparison.json'
+    output_file = results_dir / 'your path'
     with open(output_file, 'w') as f:
         json.dump(results, f, indent=2)
     
