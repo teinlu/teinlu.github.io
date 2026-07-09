@@ -102,8 +102,6 @@ Reproduce the feature-group ablation:
 python scripts/ablation_feature_groups.py
 ```
 
-Results are written as JSON summaries (see `results/` for the versions used in
-the paper).
 
 ## Method in one paragraph
 
@@ -116,18 +114,7 @@ nearest-neighbor distance to this bank, pooled per sample with **DAMS**, a
 density-aware percentile-weighted operator that down-weights over-dense regions
 so genuine geometric deviations are not washed out.
 
-## Citation
 
-```bibtex
-@inproceedings{glare2026,
-  title     = {GLARE: Geometry-based Local Anomaly Recognition and Encoding
-               for Few-Shot 3D Industrial Anomaly Detection},
-  author    = {Anonymous},
-  booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
-  year      = {2026},
-  note      = {Under review}
-}
-```
 
 ## License
 
