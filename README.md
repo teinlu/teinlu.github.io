@@ -9,7 +9,7 @@ geometric descriptor** combined with a **density-aware memory bank** matches or
 approaches full-shot RGB-D baselines while running orders of magnitude faster.
 
 > Paper: *GLARE: Geometry-based Local Anomaly Recognition and Encoding for Few-Shot
-> 3D Industrial Anomaly Detection* (under review, AAAI).
+> 3D Industrial Anomaly Detection*.
 
 ---
 
