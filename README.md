@@ -46,10 +46,10 @@ approaches full-shot RGB-D baselines while running orders of magnitude faster.
 │   ├── ablation_feature_groups.py  # Feature-group ablation (Table 3)
 │   ├── baseline_comparison.py   # FPFH / classical geometric baselines
 │   └── glare_plus.py            # GLARE+ extended experiments
-├── results/                     # Raw JSON result summaries used in the paper
-├── figures/                     # Paper figures (per-category comparison, ablations)
+├── results/                     
+├── figures/                     
 ├── requirements.txt
-├── LICENSE                      # MIT
+├── LICENSE                      
 └── README.md
 ```
 
