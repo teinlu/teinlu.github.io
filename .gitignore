@@ -1,4 +1,4 @@
-# Datasets (download separately — see README)
+# Datasets 
 Real3D-mvtec/
 MVTec3d/
 data/raw/
@@ -30,4 +30,3 @@ checkpoints/
 .vscode/
 *.swp
 
-# Keep small JSON result summaries (results/*.json are tracked intentionally)
