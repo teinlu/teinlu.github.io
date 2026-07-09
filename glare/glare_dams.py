@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-"""
-Round 47: DAMS Uniform-Weight Ablation + Multi-Seed Validation
-==============================================================
-Two experiments:
-1. DAMS Ablation: GLARE with DAMS (density-aware) vs GLARE with uniform weights
-   → Validates that DAMS contributes +2.2pp (as claimed in paper)
-2. Multi-Seed Validation: 5 seeds on Real3D-AD with standard GLARE
-   → Provides robust statistical estimate (mean ± std)
-3. 2024 Baseline comparison: Search for recent geometry-only methods
-
-Goal: Confirm DAMS contribution and validate statistical robustness
-"""
-
 import numpy as np
 import torch
 import json
@@ -212,9 +198,7 @@ def compute_features_multiscale(pts):
     # For ablation: use k=16 (matches best single-scale)
     return compute_local_features_gpu(pts, k_list=[16], use_height=True)
 
-# ═══════════════════════════════════════════════════════════
 # MEMORY BANK
-# ═══════════════════════════════════════════════════════════
 
 def greedy_coreset_gpu(features, m=8000, seed=0):
     """GPU-accelerated greedy farthest-point coreset."""
@@ -319,9 +303,7 @@ def knn_score_gpu_weighted(memory_bank, test_features, weights=None, k=1):
     torch.cuda.empty_cache()
     return np.concatenate(scores_list)
 
-# ═══════════════════════════════════════════════════════════
 # DATA LOADERS
-# ═══════════════════════════════════════════════════════════
 
 def load_real3d_category(cat_dir):
     """Load Real3D-AD category files."""
@@ -386,9 +368,7 @@ def load_mvtec3d_category(cat_dir):
     
     return train_files, test_normal, test_anomaly
 
-# ═══════════════════════════════════════════════════════════
 # EVALUATION FUNCTION
-# ═══════════════════════════════════════════════════════════
 
 def evaluate_category_with_mode(train_files, test_normal, test_anomaly,
                                  n_shots=8, seed=42, n_points=2048,
@@ -680,10 +660,7 @@ def run_mvtec3d_validation():
     return results
 
 
-# ═══════════════════════════════════════════════════════════
 # MAIN
-# ═══════════════════════════════════════════════════════════
-
 def main():
     t_start = time.time()
     
